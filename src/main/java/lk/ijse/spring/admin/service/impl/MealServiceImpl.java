@@ -45,8 +45,7 @@ public class MealServiceImpl implements MealService {
                     meal.getMealCode(),
                     meal.getMealName(),
                     meal.getDesription(),
-                    meal.getSmallPrice(),
-                    meal.getLargePrice(),
+                    meal.getPrice(),
                     meal.getCategory(),
                     meal.getImageURL());
             alMeals.add(mealDTO);
@@ -61,8 +60,7 @@ public class MealServiceImpl implements MealService {
                 meal.getMealCode(),
                 meal.getMealName(),
                 meal.getDesription(),
-                meal.getSmallPrice(),
-                meal.getLargePrice(),
+                meal.getPrice(),
                 meal.getCategory(),
                 meal.getImageURL());
         return  mealDTO;
@@ -82,8 +80,7 @@ public class MealServiceImpl implements MealService {
         Meal meal = new Meal(mealDTO.getMealCode(),
                 mealDTO.getMealName(),
                 mealDTO.getDesription(),
-                mealDTO.getSmallPrice(),
-                mealDTO.getLargePrice(),
+                mealDTO.getPrice(),
                 mealDTO.getCategory(),
                 mealDTO.getImageURL());
 

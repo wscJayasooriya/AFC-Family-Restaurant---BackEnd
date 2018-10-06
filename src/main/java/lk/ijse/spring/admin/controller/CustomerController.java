@@ -36,7 +36,7 @@ public class CustomerController {
         return service.saveCustomer(customer);
     }
 
-    @PostMapping(value = "/clientlogin", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/clientLogin", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean canAuthenticate(@RequestBody CustomerDTO customerDTO){
         return service.canAuthenticate(customerDTO.getCus_UName(), customerDTO.getCus_Password());
     }

@@ -48,10 +48,6 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
             OrderDetails orderDetails = new OrderDetails();
             orderDetails.setQty(orderDetailsDTO.getQty());
             orderDetails.setGross_Amount(orderDetailsDTO.getGross_Amount());
-            orderDetails.setD_Name(orderDetailsDTO.getD_Name());
-            orderDetails.setD_Address(orderDetailsDTO.getD_Address());
-            orderDetails.setD_tele(orderDetailsDTO.getD_tele());
-            orderDetails.setD_Charge(orderDetailsDTO.getD_Charge());
             orderDetails.setMeal(meal);
             orderDetails.setOrders(orders);
 

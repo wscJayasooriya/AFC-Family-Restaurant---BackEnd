@@ -85,7 +85,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public boolean canAuthenticate(String cus_UName, String cus_Password) {
         boolean exists = customerRepository.existsById(cus_UName);
-        if (exists){
+        if (!exists){
             return false;
         }
         Customer cust = customerRepository.findById(cus_UName).get();

@@ -9,29 +9,26 @@ public class Meal {
     private int mealCode;
     private String mealName;
     private String desription;
-    private Double smallPrice;
-    private Double largePrice;
+    private Double price;
     private String category;
     private String imageURL;
 
     public Meal() {
     }
 
-    public Meal(int mealCode,String mealName, String desription, Double smallPrice, Double largePrice, String category,String imageURL) {
+    public Meal(int mealCode,String mealName, String desription, Double price, String category,String imageURL) {
         this.setMealCode(mealCode);
         this.setMealName(mealName);
         this.setDesription(desription);
-        this.setSmallPrice(smallPrice);
-        this.setLargePrice(largePrice);
+        this.setPrice(price);
         this.setCategory(category);
         this.setImageURL(imageURL);
     }
 
-    public Meal(String mealName, String desription, Double smallPrice, Double largePrice, String category) {
+    public Meal(String mealName, String desription, Double price, Double largePrice, String category) {
         this.mealName = mealName;
         this.desription = desription;
-        this.smallPrice = smallPrice;
-        this.largePrice = largePrice;
+        this.price = price;
         this.category = category;
         this.setImageURL(imageURL);
     }
@@ -60,20 +57,12 @@ public class Meal {
         this.desription = desription;
     }
 
-    public Double getSmallPrice() {
-        return smallPrice;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setSmallPrice(Double smallPrice) {
-        this.smallPrice = smallPrice;
-    }
-
-    public Double getLargePrice() {
-        return largePrice;
-    }
-
-    public void setLargePrice(Double largePrice) {
-        this.largePrice = largePrice;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public String getCategory() {
@@ -98,8 +87,7 @@ public class Meal {
                 "mealCode=" + mealCode +
                 ", mealName='" + mealName + '\'' +
                 ", desription='" + desription + '\'' +
-                ", smallPrice=" + smallPrice +
-                ", largePrice=" + largePrice +
+                ", price=" + price +
                 ", category='" + category + '\'' +
                 ", imageURL='" + imageURL + '\'' +
                 '}';
