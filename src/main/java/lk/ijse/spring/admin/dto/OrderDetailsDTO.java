@@ -6,17 +6,17 @@ public class OrderDetailsDTO {
 
     private int qty;
     private Double gross_Amount;
-    private MealDTO mealDTO;
+    private MealDTO meal;
     private OrderDTO orderDTO;
 
     public OrderDetailsDTO() {
     }
 
-    public OrderDetailsDTO( int qty, Double gross_Amount, MealDTO mealDTO, OrderDTO orderDTO) {
-        this.setQty(qty);
-        this.setGross_Amount(gross_Amount);
-        this.setMealDTO(mealDTO);
-        this.setOrderDTO(orderDTO);
+    public OrderDetailsDTO(int qty, Double gross_Amount, MealDTO meal, OrderDTO orderDTO) {
+        this.qty = qty;
+        this.gross_Amount = gross_Amount;
+        this.meal = meal;
+        this.orderDTO = orderDTO;
     }
 
     public int getQty() {
@@ -35,13 +35,12 @@ public class OrderDetailsDTO {
         this.gross_Amount = gross_Amount;
     }
 
-
-    public MealDTO getMealDTO() {
-        return mealDTO;
+    public MealDTO getMeal() {
+        return meal;
     }
 
-    public void setMealDTO(MealDTO mealDTO) {
-        this.mealDTO = mealDTO;
+    public void setMeal(MealDTO meal) {
+        this.meal = meal;
     }
 
     public OrderDTO getOrderDTO() {
@@ -55,9 +54,9 @@ public class OrderDetailsDTO {
     @Override
     public String toString() {
         return "OrderDetailsDTO{" +
-                ", qty=" + qty +
+                "qty=" + qty +
                 ", gross_Amount=" + gross_Amount +
-                ", mealDTO=" + mealDTO +
+                ", meal=" + meal +
                 ", orderDTO=" + orderDTO +
                 '}';
     }

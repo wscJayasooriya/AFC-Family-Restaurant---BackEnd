@@ -21,8 +21,8 @@ public class CustomerController {
         return service.getAllCustomers();
     }
 
-    @GetMapping(value = "{id}" ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public CustomerDTO getCustomer(@PathVariable("id") String userName) {
+    @GetMapping(value = "{cus_UName}" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public CustomerDTO getCustomer(@PathVariable("cus_UName") String userName) {
         return service.getCustomer(userName);
     }
 

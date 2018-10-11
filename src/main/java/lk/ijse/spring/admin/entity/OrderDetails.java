@@ -1,7 +1,6 @@
 package lk.ijse.spring.admin.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 public class OrderDetails {

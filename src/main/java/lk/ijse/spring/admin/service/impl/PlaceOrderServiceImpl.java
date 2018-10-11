@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,32 +32,46 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public boolean savePlaceOrder(OrderDTO orderDTO) {
-        Customer customer = customerRepository.findById(orderDTO.getCustomerDTO().getCus_UName()).get();
-        Orders orders = new Orders(
-                orderDTO.getO_Date(),
-                orderDTO.getO_Time(),
-                customer
-        );
-        orderRepository.save(orders);
+        Customer customer = customerRepository.findById(orderDTO.getCustomerName()).get();
 
-        List<OrderDetailsDTO> orderDetailsDTOList = orderDTO.getOrderDetailsDTOS();
 
-        for (OrderDetailsDTO orderDetailsDTO : orderDetailsDTOList) {
-            Meal meal = mealRepository.findById(orderDetailsDTO.getMealDTO().getMealCode()).get();
+        Orders orders = new Orders();
+        System.out.println(1);
+        orders.setO_ID(orderDTO.getO_ID());
+        orders.setCustomer(customer);
+        orders.setO_Date(orderDTO.getO_Date());
+        orders.setO_Time(orderDTO.getO_Time());
+
+
+        List<OrderDetailsDTO> orderDetailsDTOS = orderDTO.getOrderDetailsDTOS();
+        System.out.println(orderDetailsDTOS+"--");
+        for (OrderDetailsDTO orderDetailsDTO : orderDetailsDTOS) {
+
+            Meal meal = mealRepository.findById(orderDetailsDTO.getMeal().getMealCode()).get();
+            System.out.println(meal+"aaaaaaaaaaaas");
             mealRepository.save(meal);
 
             OrderDetails orderDetails = new OrderDetails();
+            //System.out.println(orderDTO.getOrderDetailsDTOS());
             orderDetails.setQty(orderDetailsDTO.getQty());
             orderDetails.setGross_Amount(orderDetailsDTO.getGross_Amount());
             orderDetails.setMeal(meal);
             orderDetails.setOrders(orders);
+            orderRepository.save(orders);
 
-            OrderDetails_PK orderDetails_pk = new OrderDetails_PK(
-                    meal.getMealCode(),
-                    orders.getO_ID());
+            OrderDetails_PK orderDetails_pk = new OrderDetails_PK();
+
+            orderDetails_pk.setMealCode(meal.getMealCode());
+            orderDetails_pk.setO_ID(orders.getO_ID());
+
             orderDetails.setOrderDetails_pk(orderDetails_pk);
+            System.out.println(orderDetails+"aaaaaaaa");
             detailsRepository.save(orderDetails);
         }
+
+
+        orderRepository.save(orders);
+
         return true;
     }
 }

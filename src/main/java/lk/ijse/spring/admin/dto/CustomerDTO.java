@@ -2,8 +2,8 @@ package lk.ijse.spring.admin.dto;
 
 public class CustomerDTO {
 
-    private String cus_Name;
     private String cus_UName;
+    private String cus_Name;
     private String cus_Address;
     private String cus_Email;
     private String cus_Contact;

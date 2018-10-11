@@ -7,33 +7,19 @@ public class OrderDTO {
     private int o_ID;
     private String o_Date;
     private String o_Time;
-    private CustomerDTO customerDTO;
+    private String customerName;
     private List<OrderDetailsDTO> orderDetailsDTOS;
 
     public OrderDTO() {
     }
 
-    public OrderDTO(int o_ID, String o_Date, String o_Time, CustomerDTO customerDTO, List<OrderDetailsDTO> orderDetailsDTOS) {
-        this.setO_ID(o_ID);
-        this.setO_Date(o_Date);
-        this.setO_Time(o_Time);
-        this.setCustomerDTO(customerDTO);
-        this.setOrderDetailsDTOS(orderDetailsDTOS);
+    public OrderDTO(int o_ID, String o_Date, String o_Time, String customerName, List<OrderDetailsDTO> orderDetailsDTOS) {
+        this.o_ID = o_ID;
+        this.o_Date = o_Date;
+        this.o_Time = o_Time;
+        this.customerName = customerName;
+        this.orderDetailsDTOS = orderDetailsDTOS;
     }
-
-    public OrderDTO(String o_Date, String o_Time, CustomerDTO customerDTO, List<OrderDetailsDTO> orderDetailsDTOS) {
-        this.setO_Date(o_Date);
-        this.setO_Time(o_Time);
-        this.setCustomerDTO(customerDTO);
-        this.setOrderDetailsDTOS(orderDetailsDTOS);
-    }
-
-    public OrderDTO(String o_Date, String o_Time, CustomerDTO customerDTO) {
-        this.setO_Date(o_Date);
-        this.setO_Time(o_Time);
-        this.setCustomerDTO(customerDTO);
-    }
-
 
     public int getO_ID() {
         return o_ID;
@@ -59,12 +45,12 @@ public class OrderDTO {
         this.o_Time = o_Time;
     }
 
-    public CustomerDTO getCustomerDTO() {
-        return customerDTO;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCustomerDTO(CustomerDTO customerDTO) {
-        this.customerDTO = customerDTO;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public List<OrderDetailsDTO> getOrderDetailsDTOS() {
@@ -81,7 +67,7 @@ public class OrderDTO {
                 "o_ID=" + o_ID +
                 ", o_Date='" + o_Date + '\'' +
                 ", o_Time='" + o_Time + '\'' +
-                ", customerDTO=" + customerDTO +
+                ", customerName='" + customerName + '\'' +
                 ", orderDetailsDTOS=" + orderDetailsDTOS +
                 '}';
     }

@@ -16,6 +16,8 @@ public class PlaceOrderController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean placeOrder(@RequestBody OrderDTO orderDTO) {
+        System.out.println(orderDTO.getOrderDetailsDTOS()+"vbn");
+        System.out.println("controler works");
         return placeOrderService.savePlaceOrder(orderDTO);
     }
 

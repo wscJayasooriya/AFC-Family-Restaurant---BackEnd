@@ -15,4 +15,20 @@ public class OrderDetails_PK implements Serializable {
         this.mealCode = mealCode;
         this.o_ID = o_ID;
     }
+
+    public int getMealCode() {
+        return mealCode;
+    }
+
+    public void setMealCode(int mealCode) {
+        this.mealCode = mealCode;
+    }
+
+    public int getO_ID() {
+        return o_ID;
+    }
+
+    public void setO_ID(int o_ID) {
+        this.o_ID = o_ID;
+    }
 }
