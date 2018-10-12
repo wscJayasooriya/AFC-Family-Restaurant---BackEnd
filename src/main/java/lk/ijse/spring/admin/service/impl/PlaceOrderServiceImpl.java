@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,6 +40,9 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
         orders.setCustomer(customer);
         orders.setO_Date(orderDTO.getO_Date());
         orders.setO_Time(orderDTO.getO_Time());
+        orders.setD_Name(orderDTO.getD_Name());
+        orders.setD_Address(orderDTO.getD_Address());
+        orders.setD_Tele(orderDTO.getD_Tele());
 
 
         List<OrderDetailsDTO> orderDetailsDTOS = orderDTO.getOrderDetailsDTOS();
